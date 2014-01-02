@@ -26,21 +26,39 @@ def shopkeepers_view
         read_products_stock
 
       when 2 
-        puts "\nAdd New stock : "
+        puts " Add New Items to stock : \n"
         get_product_details
-        write_product(@product_code,@product_name,@product_price,@product_quantity,@product_company)
+        write_product(@product_id,@product_name,@product_price,@product_quantity,@product_company)
+
+      when 4
+        print "Enter the product ID to remove : "
+        remove_product(gets.strip)
 
       when 5
+          print"Enter 1. To search Product by ID\n      2. To search Product by Name\n"
+          print "Enter your choice : "
+          option = gets.to_i
+          puts"\n"
+          loop do
+              case option
 
-        print "Enter the product product code to search :"
-        product_to_search = gets.strip
-        search_product_by_id(product_to_search)
+                when 1  
+                print "Enter the Product ID to search :"
+                product_to_search = gets.strip
+                search_product_by_id(product_to_search)
+                break
 
-        print "Enter the product product name to search :"
-        product_to_search = gets.strip
-        search_product_by_name(product_to_search)
+                when 2
+                print "Enter the Product NAME to search :"
+                product_to_search = gets.strip
+                search_product_by_name(product_to_search)
+                break
 
-
+                else
+                puts "Wrong Operation"
+                break  
+              end   
+          end
 
       when 7
        exit
@@ -52,6 +70,7 @@ def shopkeepers_view
 
   end
 end
+
 
 
 

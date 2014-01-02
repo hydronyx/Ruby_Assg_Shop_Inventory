@@ -1,5 +1,6 @@
 #Assignment 3 : OOPS CONCEPTS - RUBY
 
+require 'fileutils'
 require_relative 'shopkeeper.rb'
 require_relative 'customer.rb'
 require_relative 'product.rb'
