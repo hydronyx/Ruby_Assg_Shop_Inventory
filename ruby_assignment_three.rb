@@ -4,12 +4,12 @@ require_relative 'shopkeeper.rb'
 require_relative 'customer.rb'
 require_relative 'product.rb'
 
-puts "Inventory Management System : SHOP \n"
+puts "\n:: SHOP INVENTORY MANAGEMENT SYSTEM ::"
 
-puts "\n Are you a Customer or a Shopkeeper? "
-puts "\n 1.For Shopkeeper \n 2.For Customer\n\n"
+puts "\nAre you a Customer or a Shopkeeper? "
+puts "   1.For Shopkeeper \n   2.For Customer\n\n"
 
-print 'User Type : '
+print 'Enter user type : '
 	user_type = gets.strip.to_i
 
 	
@@ -25,6 +25,11 @@ print 'User Type : '
 	end
 
 
-	getdata
-	showdata(@product_name,@product_code,@product_price,@product_quantity)
+
+
+	#show_product(@product_code,@product_name,@product_price,@product_quantity)
  
+ 	
+
+
+
