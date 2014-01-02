@@ -124,7 +124,7 @@ def remove_product(product_id)
 
 		File.open("tempfile.txt", "a") do |tempfile|	
 			if product_id.to_i != temp[0].to_i
-				tempfile.syswrite(arr[i])
+				tempfile.puts(arr[i])
 			end
 		end
 
