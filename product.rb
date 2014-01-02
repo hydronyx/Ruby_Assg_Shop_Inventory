@@ -4,31 +4,30 @@
 # Gets the details of the product from shopkeeper.
 def get_product_details
 
-		print "    Enter the product ID  :"
-		@product_id= gets.strip.to_i 
+	print "    Enter the product ID  :"
+	@product_id= gets.strip.to_i 
 				#print product_code
-		print "    Enter the product NAME  :"
-		@product_name= gets.strip 
+				print "    Enter the product NAME  :"
+				@product_name= gets.strip 
 				#print product_name
-		print "    Enter the product PRICE :"
-		@product_price= gets.strip.to_i 
+				print "    Enter the product PRICE :"
+				@product_price= gets.strip.to_i 
 				#print product_price
-		print "    Enter the product QUANTITY :"
-		@product_quantity= gets.strip.to_i 
+				print "    Enter the product QUANTITY :"
+				@product_quantity= gets.strip.to_i 
 				#print product_quantity		
-		print "    Enter the product COMPANY :"
-		@product_company= gets.strip 
+				print "    Enter the product COMPANY :"
+				@product_company= gets.strip 
 				#print product_quantity	
 end
 
-
+#This method writes  new items to the stock.
 def write_product(product_name,product_id,product_price,product_quantity,product_company)
 	File.open("inventory.txt", "a") do |inventory_file|
-			inventory_file.print"#{@product_id}^"
-			inventory_file.print"#{@product_name}^"
-			inventory_file.print"#{@product_price}^"
-			inventory_file.print"#{@product_quantity}^"
-			inventory_file.puts"#{@product_company}"
+					
+	inventory_file.puts("#{@product_id}^#{@product_name}^#{@product_price}" +
+						"^#{@product_quantity}^#{@product_company}")
+	inventory_file.close
 	end
 end
 
@@ -38,11 +37,11 @@ end
 def read_products_stock
 
 	arr = IO.readlines("inventory.txt")
-    len=0,i=0;
-    len=arr.length
+	len=0,i=0;
+	len=arr.length
 
-    while i != len  do
-	
+	while i != len  do
+
 		temp = arr[i].split("^")
 		
 		puts "\n---------------------------------"
@@ -61,10 +60,10 @@ end
 def search_product_by_id(product_id)
 
 	arr = IO.readlines("inventory.txt")
-    len=0,i=0;
-    len=arr.length
+	len=0,i=0;
+	len=arr.length
 
-    while i != len  do
+	while i != len  do
 
 		temp = arr[i].split("^")
 
@@ -89,10 +88,10 @@ def search_product_by_name(product_name)
 
 	print "\nThe search result by NAME is/are:"
 	arr = IO.readlines("inventory.txt")
-    len=0,i=0;
-    len=arr.length
+	len=0,i=0;
+	len=arr.length
 
-    while i != len  do
+	while i != len  do
 		temp = arr[i].split("^")
 
 		if temp[1] == product_name
@@ -116,26 +115,23 @@ def remove_product(product_id)
 	puts "In remove"
 	
 	arr = IO.readlines("inventory.txt")
-    len=0,i=0;
-    len=arr.length
+	len=0,i=0;
+	len=arr.length
 
-    while i != len  do
+	while i != len  do
 		temp = arr[i].split("^")
-		puts temp[0]
+		#puts temp[0]
 
-			File.open("tempfile.txt", "a") do |tempfile|	
-    			if product_id.to_i != temp[0].to_i
-    			 tempfile.syswrite(temp)
-    			end
-  			end
+		File.open("tempfile.txt", "a") do |tempfile|	
+			if product_id.to_i != temp[0].to_i
+				tempfile.syswrite(arr[i])
+			end
+		end
 
-  		i=i+1;
+		i=i+1;
 	end
 
-	
-
-	
-
+	FileUtils.mv("tempfile.txt", "inventory.txt")
 end
 
 
