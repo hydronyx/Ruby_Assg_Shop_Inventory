@@ -1,11 +1,2 @@
-<<<<<<< HEAD
 4334^dfsdf^432^444^dsfd
 4323424^ssfdsfdsf^23213^23131^dsadas
-=======
-444^re^4443^32^fsdf
-32^ewe^333^434^wqewqee
-44^eqeew^342^32^weqewqe
-333^ewqe^323^133^dsadasd
-323^ewq^3232^33^ewqeqe
-3^wew^333^23^wqewe
->>>>>>> 882a80f9abbff571bd47fca2bb776083e998d1ed
