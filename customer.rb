@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'fileutils'
 require_relative 'product.rb'
 require_relative 'common_methods.rb'
@@ -63,3 +64,15 @@ class CustomerDetails
 		end
 	end
 end 
+=======
+
+def customers_view
+
+	print "\n Select the Operation to perform :"
+	print "\n 1. list products	: " 
+	print "\n 2. search product : " 
+	print "\n 3. Buy product    : " 
+	operation_no = gets.strip.to_i
+
+end
+>>>>>>> 882a80f9abbff571bd47fca2bb776083e998d1ed
